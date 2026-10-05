@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_main">
+
+    <!-- ============ 左侧导航 ============ -->
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_left_nav"
+        android:padding="24dp">
+
+        <!-- 顶部按钮行（返回 + 返回主页 并排） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
+                android:padding="12dp"
+                android:src="@android:drawable/ic_menu_revert"
+                android:background="@drawable/bg_input_rounded"
+                android:backgroundTint="#4DB6AC"
+                android:contentDescription="返回" />
+
+            <ImageView
+                android:id="@+id/btnBackHome"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/return2home"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="centerInside"
+                android:contentDescription="返回主页"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logo_neurox"
+            android:scaleType="fitStart"
+            android:contentDescription="NeuroX Logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Start Experiment"
+            android:textSize="12sp"
+            android:textColor="#888888" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#D0E5E5" />
+
+        <!-- 设置（已完成） -->
+        <LinearLayout
+            android:id="@+id/navSetup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bg_dot_selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="设置 Setup"
+                android:textSize="15sp"
+                android:textColor="#1BA39A" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="9dp"
+            android:background="#D0E5E5" />
+
+        <!-- 检测（已完成） -->
+        <LinearLayout
+            android:id="@+id/navInspection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bg_dot_selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="检测 Inspection"
+                android:textSize="15sp"
+                android:textColor="#1BA39A" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="9dp"
+            android:background="#D0E5E5" />
+
+        <!-- 监控（当前） -->
+        <LinearLayout
+            android:id="@+id/navMonitor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/bg_dot_selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="监控 Monitor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#1BA39A" />
+
+        </LinearLayout>
+
+        <!-- 撑开空间，把状态栏推到底部 -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- 连接状态 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="连接服务器地址："
+            android:textSize="12sp"
+            android:textColor="#888888" />
+
+        <TextView
+            android:id="@+id/tvServerAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="---"
+            android:textSize="13sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/tvConnStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="连接中..."
+            android:textSize="13sp"
+            android:textColor="#666666" />
+
+    </LinearLayout>
+
+    <!-- ============ 右侧主内容区 ============ -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- ===== 顶部状态条 ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- LSL 状态 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_capsule_white"
+                android:elevation="2dp">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_dot_ok" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="LSL Stream: Connected"
+                    android:textSize="13sp"
+                    android:textColor="#333333" />
+
+            </LinearLayout>
+
+            <!-- REC 计时 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_capsule_white"
+                android:elevation="2dp">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/bg_dot_bad" />
+
+                <TextView
+                    android:id="@+id/tvRecTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="REC 00:12:45"
+                    android:textSize="13sp"
+                    android:textColor="#333333" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ===== 内容区（FrameLayout 后面用于切换） ===== -->
+        <!-- 这里先放一个线性占位结构，第 2 轮再填图 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <!-- 上半：左刺激屏幕 + 右被试摄像头 + 最右血氧心率 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- 刺激屏幕画面 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_info_card"
+                    android:padding="12dp"
+                    android:elevation="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="刺激屏幕画面"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/ivPic"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/img_pic"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="刺激屏幕画面" />
+
+                </LinearLayout>
+
+                <!-- 被试摄像头 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_info_card"
+                    android:padding="12dp"
+                    android:elevation="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="被试摄像头"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:id="@+id/ivEx"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/img_ex"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="被试摄像头" />
+
+                </LinearLayout>
+
+                <!-- 右侧：血氧 + 心率 -->
+                <LinearLayout
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <!-- 血氧 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_info_card"
+                        android:padding="12dp"
+                        android:elevation="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="血氧 SpO2"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                        <TextView
+                            android:id="@+id/tvSpo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="98%"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+
+                    </LinearLayout>
+
+                    <!-- 心率 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_info_card"
+                        android:padding="12dp"
+                        android:elevation="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="心率 HR"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:id="@+id/tvHr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="63"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="#222222" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="bpm"
+                                android:textSize="12sp"
+                                android:textColor="#666666" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 下半：脑电波 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_info_card"
+                android:padding="12dp"
+                android:elevation="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="脑电波"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333" />
+
+                <com.fsl.neuroxapptest.EegWaveView
+                    android:id="@+id/eegWaveView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ===== 底部按钮区 ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- 标记伪迹 -->
+            <TextView
+                android:id="@+id/btnMarkArtifact"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="🚩 标记伪迹"
+                android:textSize="13sp"
+                android:textColor="#1BA39A"
+                android:background="@drawable/bg_capsule_white"
+                android:elevation="2dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- 标记事件 -->
+            <TextView
+                android:id="@+id/btnMarkEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="★ 标记事件"
+                android:textSize="13sp"
+                android:textColor="#1BA39A"
+                android:background="@drawable/bg_capsule_white"
+                android:elevation="2dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- 自定义标记 -->
+            <TextView
+                android:id="@+id/btnMarkCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="❓ 自定义标记"
+                android:textSize="13sp"
+                android:textColor="#1BA39A"
+                android:background="@drawable/bg_capsule_white"
+                android:elevation="2dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- 占位 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- 暂停 / 继续 -->
+            <TextView
+                android:id="@+id/btnPauseResume"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="暂停"
+                android:textSize="14sp"
+                android:textColor="#1BA39A"
+                android:background="@drawable/bg_btn_outline"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone" />
+
+            <!-- 重新调试 -->
+            <TextView
+                android:id="@+id/btnRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="← 重新调试"
+                android:textSize="14sp"
+                android:textColor="#1BA39A"
+                android:background="@drawable/bg_btn_outline"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- 结束实验 -->
+            <TextView
+                android:id="@+id/btnAction"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="终止实验 →"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_btn_end"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

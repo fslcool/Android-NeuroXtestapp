@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main">
+
+    <!-- 左上角返回圆按钮 -->
+    <ImageView
+        android:id="@+id/btnHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="24dp"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:background="@drawable/bg_input_rounded"
+        android:backgroundTint="#4DB6AC"
+        android:contentDescription="返回" />
+
+    <!-- 中间大卡片 -->
+    <LinearLayout
+        android:layout_width="780dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card"
+        android:padding="28dp"
+        android:elevation="6dp">
+
+        <!-- 卡片标题 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统设置"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#222222" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="System Settings"
+                android:textSize="14sp"
+                android:textColor="#999999" />
+
+        </LinearLayout>
+
+        <!-- 卡片主体：左菜单 + 右内容 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <!-- ============ 左侧菜单 ============ -->
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- 通用 General -->
+                <TextView
+                    android:id="@+id/menuGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="通用 General"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_menu_selected" />
+
+                <!-- 网络 Network -->
+                <TextView
+                    android:id="@+id/menuNetwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="网络 Network"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+                <!-- 设备 Device -->
+                <TextView
+                    android:id="@+id/menuDevice"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="设备 Device"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+                <!-- 账户 Account -->
+                <TextView
+                    android:id="@+id/menuAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="账户 Account"
+                    android:textSize="14sp"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+
+            <!-- ============ 右侧内容区 ============ -->
+            <!-- ============ 右侧内容区：用 FrameLayout 装载 4 个可切换的面板 ============ -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="24dp">
+
+                <!-- ===== 面板 1：通用 General ===== -->
+                <LinearLayout
+                    android:id="@+id/panelGeneral"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_input_rounded"
+                    android:padding="20dp">
+
+                    <!-- 自动同步 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="自动同步 LSL    Auto-sync LSL"
+                            android:textSize="14sp"
+                            android:textColor="#333333" />
+                        <Switch
+                            android:id="@+id/swAutoSync"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+
+                    <!-- 上传云端 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="上传云端    Cloud Upload"
+                            android:textSize="14sp"
+                            android:textColor="#333333" />
+                        <Switch
+                            android:id="@+id/swCloudUpload"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false" />
+                    </LinearLayout>
+
+                    <!-- 实验室名称 -->
+                    <EditText
+                        android:id="@+id/etLabName"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="24dp"
+                        android:hint="实验室名称  Lab Name"
+                        android:textSize="13sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/bg_input_rounded" />
+
+                    <!-- 设备编号 -->
+                    <EditText
+                        android:id="@+id/etDeviceId"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="16dp"
+                        android:hint="设备编号  Device ID"
+                        android:textSize="13sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/bg_input_rounded" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/btnSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="保存修改"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#4DB6AC" />
+
+                </LinearLayout>
+
+                <!-- ===== 面板 2：网络 Network（隐藏） ===== -->
+                <LinearLayout
+                    android:id="@+id/panelNetwork"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_input_rounded"
+                    android:padding="20dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="网络设置"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="服务器地址"
+                        android:textSize="13sp"
+                        android:textColor="#666666" />
+
+                    <EditText
+                        android:id="@+id/etServerUrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="例如 192.168.1.100:8080"
+                        android:textSize="13sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/bg_input_rounded" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="X-CT-Token"
+                        android:textSize="13sp"
+                        android:textColor="#666666" />
+
+                    <EditText
+                        android:id="@+id/etToken"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="请输入 Token"
+                        android:textSize="13sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/bg_input_rounded" />
+
+                    <Button
+                        android:id="@+id/btnSaveNetwork"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_gravity="end"
+                        android:paddingLeft="32dp"
+                        android:paddingRight="32dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="保存网络设置"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#4DB6AC" />
+
+                </LinearLayout>
+
+                <!-- ===== 面板 3：设备 Device（隐藏） ===== -->
+                <LinearLayout
+                    android:id="@+id/panelDevice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_input_rounded"
+                    android:padding="20dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="设备信息"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="设备状态"
+                            android:textSize="14sp"
+                            android:textColor="#333333" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="未连接"
+                            android:textSize="14sp"
+                            android:textColor="#999999" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="采样率"
+                            android:textSize="14sp"
+                            android:textColor="#333333" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-- Hz"
+                            android:textSize="14sp"
+                            android:textColor="#999999" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnScanDevice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:paddingLeft="24dp"
+                        android:paddingRight="24dp"
+                        android:text="扫描设备"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#4DB6AC" />
+
+                </LinearLayout>
+
+                <!-- ===== 面板 4：账户 Account（隐藏） ===== -->
+                <LinearLayout
+                    android:id="@+id/panelAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_input_rounded"
+                    android:gravity="center"
+                    android:padding="32dp"
+                    android:visibility="gone">
+
+                    <!-- 头像区（头像 + 右上角编辑图标） -->
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/ivAccountAvatar"
+                            android:layout_width="88dp"
+                            android:layout_height="88dp"
+                            android:src="@android:drawable/sym_def_app_icon"
+                            android:background="@drawable/bg_avatar_circle"
+                            android:padding="8dp"
+                            android:contentDescription="头像" />
+
+                        <!-- 右上角编辑小图标 -->
+                        <ImageView
+                            android:id="@+id/ivEditAvatar"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="end|top"
+                            android:layout_marginTop="-4dp"
+                            android:layout_marginEnd="-4dp"
+                            android:padding="2dp"
+                            android:background="@drawable/bg_avatar_circle"
+                            android:backgroundTint="#FFFFFF"
+                            android:src="@android:drawable/ic_menu_edit"
+                            android:contentDescription="编辑头像" />
+
+                    </FrameLayout>
+
+                    <!-- 用户名 + 编辑图标 + 下划线 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tvAccountName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Counselor"
+                            android:textSize="18sp"
+                            android:textColor="#222222" />
+
+                        <ImageView
+                            android:id="@+id/ivEditName"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@android:drawable/ic_menu_edit"
+                            android:contentDescription="编辑用户名" />
+
+                    </LinearLayout>
+
+                    <!-- 下划线 -->
+                    <View
+                        android:layout_width="180dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="6dp"
+                        android:background="#BBBBBB" />
+
+                    <!-- 更换账号按钮 -->
+                    <Button
+                        android:id="@+id/btnChangeAccount"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:text="更换账号"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#4DB6AC" />
+
+                    <!-- 退出登录按钮 -->
+                    <Button
+                        android:id="@+id/btnLogout"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp"
+                        android:text="退出登录"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#00897B" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

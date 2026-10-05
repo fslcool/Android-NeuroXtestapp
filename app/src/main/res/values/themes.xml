@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.NeuroXApptest" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- 主色：青绿 -->
+        <item name="colorPrimary">@color/teal_primary</item>
+        <item name="colorPrimaryVariant">@color/teal_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- 状态栏颜色：青绿 -->
+        <item name="android:statusBarColor">@color/teal_primary</item>
+
+        <!-- 状态栏图标：白色（深色背景上用） -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.NeuroXApptest" parent="Base.Theme.NeuroXApptest" />
+</resources>

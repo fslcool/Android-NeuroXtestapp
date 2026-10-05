@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="horizontal">
+
+    <!-- 左半：脑图 -->
+
+    <!-- 右半：表单区 -->
+
+    <ImageView
+        android:id="@+id/ivBrain"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:contentDescription="脑图"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_brain" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#FAFCFC"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="64dp"
+        android:paddingRight="64dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
+            android:contentDescription="NeuroX Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_neurox" />
+
+        <!-- 中文副标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="多源异构数据采集与管理平台"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <!-- 英文副标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Multi-source Heterogeneous Data Platform"
+            android:textColor="#888888"
+            android:textSize="12sp" />
+
+        <!-- 用户名输入框 -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/bg_input_rounded"
+            android:drawableStart="@android:drawable/ic_menu_myplaces"
+            android:drawablePadding="12dp"
+            android:hint="用户名"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingTop="14dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="14dp"
+            android:textSize="15sp" />
+
+        <!-- 密码输入框 -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_input_rounded"
+            android:drawableStart="@android:drawable/ic_lock_lock"
+            android:drawablePadding="12dp"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="14dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="14dp"
+            android:textSize="15sp" />
+
+        <!-- 登录按钮 -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#1BB8B0"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="立即登录"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <!-- 注册链接 -->
+        <TextView
+            android:id="@+id/tvGoRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="没有账号？立即注册"
+            android:textColor="#1BB8B0"
+            android:textSize="13sp" />
+
+        <!-- 底部版本号 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="System Version 2.0"
+            android:textColor="#BBBBBB"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

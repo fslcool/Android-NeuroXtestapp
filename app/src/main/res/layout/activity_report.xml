@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_main">
+
+    <!-- ============ 左侧信息栏 ============ -->
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_left_nav"
+        android:padding="24dp">
+
+        <!-- 日期 -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2024-01-14"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#222222" />
+
+        <!-- 范式胶囊 -->
+        <TextView
+            android:id="@+id/tvParadigm"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="静息态"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_pill_teal" />
+
+        <!-- 被试信息标题 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="被试信息"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#222222" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Subject Info"
+                android:textSize="12sp"
+                android:textColor="#999999" />
+
+        </LinearLayout>
+
+        <!-- 姓名 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="姓名 Name"
+            android:textSize="13sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="李娜"
+            android:textSize="14sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_pill_field" />
+
+        <!-- 学号 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="学号 ID"
+            android:textSize="13sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="2003002"
+            android:textSize="14sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_pill_field" />
+
+        <!-- 年龄 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="年龄 Age"
+            android:textSize="13sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="18"
+            android:textSize="14sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_pill_field" />
+
+        <!-- 性别 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="性别 Gender"
+            android:textSize="13sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="女"
+            android:textSize="14sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_pill_field" />
+
+    </LinearLayout>
+
+    <!-- ============ 右侧主内容区 ============ -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 顶部状态条 -->
+        <!-- 顶部状态条（占位，留点间距） -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- 内容区 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <!-- 上半：刺激屏幕 + 被试摄像头 + 血氧心率 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- 刺激屏幕画面 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_info_card"
+                    android:padding="12dp"
+                    android:elevation="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="刺激屏幕画面"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/img_pic"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="刺激屏幕画面" />
+
+                </LinearLayout>
+
+                <!-- 被试摄像头 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_info_card"
+                    android:padding="12dp"
+                    android:elevation="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="被试摄像头"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/img_ex"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="被试摄像头" />
+
+                </LinearLayout>
+
+                <!-- 右侧：血氧 + 心率 -->
+                <LinearLayout
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_info_card"
+                        android:padding="12dp"
+                        android:elevation="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="血氧 SpO2"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="98%"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_info_card"
+                        android:padding="12dp"
+                        android:elevation="3dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="心率 HR"
+                            android:textSize="12sp"
+                            android:textColor="#666666" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal"
+                            android:gravity="bottom">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="63"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="#222222" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:text="bpm"
+                                android:textSize="12sp"
+                                android:textColor="#666666" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 下半：脑电波 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_info_card"
+                android:padding="12dp"
+                android:elevation="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="脑电波"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/img_bo"
+                    android:scaleType="fitXY"
+                    android:contentDescription="脑电波" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 底部按钮区 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- 结果标签（动态：正常/需关注） -->
+            <LinearLayout
+                android:id="@+id/llResultBg"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:background="@drawable/bg_result_green"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正常"
+                    android:textSize="13sp"
+                    android:textColor="#00796B" />
+
+            </LinearLayout>
+
+            <!-- 占位 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- 返回 -->
+            <TextView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="← 返回"
+                android:textSize="15sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/bg_btn_back_teal"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

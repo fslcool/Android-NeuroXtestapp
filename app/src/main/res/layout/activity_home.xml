@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_main"
+    android:padding="24dp">
+
+    <!-- 顶部栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="44dp"
+            android:src="@drawable/logo_neurox"
+            android:scaleType="fitStart"
+            android:contentDescription="NeuroX Logo" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/sym_def_app_icon"
+            android:contentDescription="头像"
+            android:background="@drawable/bg_input_rounded"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="Welcome, Counselor"
+            android:textSize="14sp"
+            android:textColor="#333333" />
+
+    </LinearLayout>
+
+    <!-- 中间：4 个卡片，整体居中 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <!-- 真正的卡片区（固定宽度，居中） -->
+        <LinearLayout
+            android:layout_width="900dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <!-- 第一行 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:orientation="horizontal">
+
+                <!-- 卡片 1：开始实验 -->
+                <LinearLayout
+                    android:id="@+id/cardExperiment"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:elevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="开始实验"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Start Experiment"
+                            android:textSize="25sp"
+                            android:textColor="#999999" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:src="@drawable/ic_experiment"
+                        android:contentDescription="开始实验" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="1dp" />
+
+                <!-- 卡片 2：数据管理 -->
+                <LinearLayout
+                    android:id="@+id/cardData"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:elevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="数据管理"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Data Management"
+                            android:textSize="25sp"
+                            android:textColor="#999999" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="240dp"
+                        android:layout_height="240dp"
+                        android:src="@drawable/ic_data"
+                        android:contentDescription="数据管理" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp" />
+
+            <!-- 第二行 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:orientation="horizontal">
+
+                <!-- 卡片 3：播放音乐 -->
+                <LinearLayout
+                    android:id="@+id/cardMusic"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:elevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="播放音乐"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Relaxation Music"
+                            android:textSize="25sp"
+                            android:textColor="#999999" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:src="@drawable/ic_music"
+                        android:contentDescription="播放音乐" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="1dp" />
+
+                <!-- 卡片 4：系统设置 -->
+                <LinearLayout
+                    android:id="@+id/cardSetting"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_card"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp"
+                    android:elevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="系统设置"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="#222222" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Settings"
+                            android:textSize="25sp"
+                            android:textColor="#999999" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="240dp"
+                        android:layout_height="240dp"
+                        android:src="@drawable/ic_setting"
+                        android:contentDescription="系统设置" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
